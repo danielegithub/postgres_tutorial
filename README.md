@@ -10,6 +10,10 @@ Adesso per connettersi al database bisogna
 - andare nel file inspect
   - se non ho cambiato nulla, si trova l'ip 172.17.0.X e la password.
   - Il nome utente è "postgres"
+##  Se invece voglio impostare una password
+ ```bash
+docker run -d --name my_postgres -e POSTGRES_PASSWORD=mystrongpassword -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres
+```bash
 # Configurazione del Volume (su Windows)
 
 creo una cartella sul desktop
