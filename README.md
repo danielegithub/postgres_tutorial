@@ -15,8 +15,16 @@ Adesso per connettersi al database bisogna
 docker run -d --name my_postgres -e POSTGRES_PASSWORD=mystrongpassword -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres
 ```
 # Configurazione del Volume (su Windows)
+creo una cartella sul desktop (corretto)
+-  Passaggi
+-  - Posso anche non creare il volume
+   - Creo una cartella in C:\Docker\pgdev
+   - poi lancio il comando passandogli il path nuovo che ho creato
+```bash
+docker run --name pgdev -e POSTGRES_PASSWORD=Str0ngP@ssword -d -p 5432:5432 -v C:\Docker\pgdev:/var/lib/postgresql/data  postgres
+```
 
-creo una cartella sul desktop
+creo una cartella sul desktop (errato
 ```bash
 docker volume create --name postgres_data -d local --opt type=none --opt device=/c/Users/LA_CARTELLA_CHE_HO_CREATO --opt o=bind
 docker run -d --name my_postgres -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres
